@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fenny Jaya | Personal Portfolio</title>
+
+<meta content="#111827" name="theme-color"/>
+<link href="style.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fira+Code:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+<div id="scrollProgress"></div>
+
+
+<canvas id="particleCanvas"></canvas>
+<a class="skip-link" href="#tentang">Lewati ke konten utama</a>
+<div class="floating-status">
+<span class="live-dot"></span>
+<span id="liveStatusText">ONLINE</span>
+<span class="status-divider">•</span>
+<span id="liveClock">--:--:--</span>
+</div>
+
+<header class="hero">
+<div class="hero-content">
+<div class="profile-container">
+<div class="profile-ring">
+<img alt="Foto Fenny Jaya" onerror="this.style.display='none'; this.parentElement.classList.add('no-photo')" src="foto/fenny.jpg"/>
+</div>
+<span class="status-badge">
+<span class="pulse-dot"></span>
+                    Belajar &amp; Mengembangkan Proyek
+                </span>
+</div>
+<p class="hello">HELLO, I'M</p>
+<h1>
+                Fenny <span class="accent-text">Jaya</span>
+</h1>
+<p class="subtitle">
+                🚀 <span id="typing-text"></span><span class="cursor">|</span>
+</p>
+<p class="school">
+<span>XI TKJ 3</span> • SMKN 3 Soppeng
+            </p>
+<div class="hero-btns">
+<a class="btn glow-btn" href="#tentang">
+<i class="fa-solid fa-arrow-down"></i>
+                    Jelajahi Portofolio
+                </a>
+<button class="btn outline-btn" onclick="openContactModal()">
+<i class="fa-regular fa-paper-plane"></i>
+                    Hubungi Saya
+                </button>
+</div>
+<div class="hero-mini-stats">
+<div class="mini-stat glass">
+<strong>03</strong>
+<span>Core Skills</span>
+</div>
+<div class="mini-stat glass">
+<strong>02</strong>
+<span>Proyek Utama</span>
+</div>
+<div class="mini-stat glass">
+<strong>01</strong>
+<span>Fokus Utama</span>
+</div>
+</div>
+</div>
+</header>
+<nav class="glass-nav" id="mainNav">
+<div class="logo">
+<span class="logo-text">FJ</span>
+<span class="dot">.</span>
+<span class="badge-tech">TKJ</span>
+</div>
+<div class="nav-links">
+<a data-nav="tentang" href="#tentang">Tentang</a>
+<a data-nav="data" href="#data">Data Diri</a>
+<a data-nav="skills" href="#skills">Skills</a>
+<a data-nav="proyek" href="#proyek">Proyek</a>
+<a data-nav="timeline" href="#timeline">Perjalanan</a>
+<a data-nav="kontak" href="#kontak">Kontak</a>
+</div>
+<button aria-label="Buka menu" class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()">
+<i class="fa-solid fa-bars"></i>
+</button>
+<div class="nav-actions">
+
+<div aria-label="Warna aksen" class="theme-picker">
+<button aria-label="Tema cyan" class="theme-dot cyan" onclick="setTheme('#00f3ff')" title="Cyan Neon">
+</button>
+<button aria-label="Tema magenta" class="theme-dot pink" onclick="setTheme('#ff007f')" title="Magenta Cyber">
+</button>
+<button aria-label="Tema hijau" class="theme-dot green" onclick="setTheme('#00ff66')" title="Matrix Green">
+</button>
+</div>
+<button aria-label="Bagikan portofolio" class="nav-icon-btn glass" onclick="sharePortfolio()" title="Bagikan portofolio">
+<i class="fa-solid fa-share-nodes"></i>
+</button>
+</div>
+</nav>
+<main id="cvContent">
+<!-- =========================
+             TENTANG
+             ========================= -->
+<section class="section" id="tentang">
+<div class="section-title">
+<span class="num">01</span>
+<h2>Tentang Saya</h2>
+<div class="title-line"></div>
+</div>
+<div class="glass card-about highlight-box">
+<p>
+                    Saya adalah siswi kelas
+                    <strong>XI TKJ 3 di SMKN 3 Soppeng</strong>
+                    yang memiliki passion mendalam di bidang
+                    <strong>Teknik Komputer dan Jaringan (TJKT)</strong>.
+
+                    Berfokus pada perancangan jaringan,
+                    konfigurasi server, serta keamanan siber.
+
+                    Saya terus belajar melalui latihan, praktikum, dan proyek digital.
+                </p>
+</div>
+</section>
+<!-- =========================
+             DATA DIRI
+             ========================= -->
+<section class="section" id="data">
+<div class="section-title">
+<span class="num">02</span>
+<h2>Data Diri</h2>
+<div class="title-line"></div>
+</div>
+<div class="grid-2">
+<div class="glass info-card tilt-card">
+<div class="card-header">
+<span class="card-icon">👤</span>
+<h3>Informasi Pribadi</h3>
+</div>
+<ul>
+<li>
+<span>Nama Lengkap:</span>
+                            Fenny Jaya
+                        </li>
+<li>
+<span>Kelas:</span>
+                            XI TKJ 3
+                        </li>
+<li>
+<span>Sekolah:</span>
+                            SMKN 3 Soppeng
+                        </li>
+<li>
+<span>Jurusan:</span>
+                            Teknik Komputer &amp; Jaringan
+                        </li>
+<li>
+<span>Fokus Utama:</span>
+                            Network Administration &amp; Web Dev
+                        </li>
+</ul>
+</div>
+<div class="glass info-card tilt-card">
+<div class="card-header">
+<span class="card-icon">📍</span>
+<h3>Domisili &amp; Kontak</h3>
+</div>
+<ul>
+<li>
+<span>Lokasi:</span>
+                            Kabupaten Soppeng, Sulawesi Selatan
+                        </li>
+<li>
+<span>Email:</span>
+                            pendiagus333@gmail.com
+                        </li>
+<li>
+<span>Status:</span>
+                            Siswa Aktif
+                        </li>
+<li>
+<span>Bahasa:</span>
+                            Indonesia, Inggris (Dasar)
+                        </li>
+</ul>
+</div>
+</div>
+</section>
+<!-- =========================
+             QUICK TOOLS
+             ========================= -->
+<section class="section" id="tools">
+<div class="section-title">
+<span class="num">03</span>
+<h2>Quick Tools</h2>
+<div class="title-line"></div>
+</div>
+<div class="tools-grid">
+<button class="glass tool-card" onclick="copyPortfolioLink()">
+<span class="tool-icon">
+<i class="fa-solid fa-link"></i>
+</span>
+<span>
+<strong>Copy Link</strong>
+<small>Salin alamat portofolio</small>
+</span>
+<i class="fa-solid fa-arrow-up-right-from-square tool-arrow"></i>
+</button>
+<button class="glass tool-card" onclick="downloadCV()">
+<span class="tool-icon">
+<i class="fa-solid fa-file-pdf"></i>
+</span>
+<span>
+<strong>Download CV</strong>
+<small>Ekspor halaman menjadi PDF</small>
+</span>
+<i class="fa-solid fa-arrow-up-right-from-square tool-arrow"></i>
+</button>
+<button class="glass tool-card" onclick="scrollToSection('proyek')">
+<span class="tool-icon">
+<i class="fa-solid fa-code"></i>
+</span>
+<span>
+<strong>Lihat Proyek</strong>
+<small>Langsung ke karya utama</small>
+</span>
+<i class="fa-solid fa-arrow-up-right-from-square tool-arrow"></i>
+</button>
+<button class="glass tool-card" onclick="openContactModal()">
+<span class="tool-icon">
+<i class="fa-regular fa-envelope"></i>
+</span>
+<span>
+<strong>Hubungi</strong>
+<small>Kirim email dengan cepat</small>
+</span>
+<i class="fa-solid fa-arrow-up-right-from-square tool-arrow"></i>
+</button>
+</div>
+</section>
+<!-- =========================
+             SKILLS
+             ========================= -->
+<section class="section" id="skills">
+<div class="section-title">
+<span class="num">04</span>
+<h2>Keahlian Utama</h2>
+<div class="title-line"></div>
+</div>
+<div class="skill-filters">
+<button class="filter-btn active" onclick="filterSkills('all')">
+                    Semua
+                </button>
+<button class="filter-btn" onclick="filterSkills('network')">
+                    Jaringan
+                </button>
+<button class="filter-btn" onclick="filterSkills('web')">
+                    Web Dev
+                </button>
+<button class="filter-btn" onclick="filterSkills('security')">
+                    Keamanan
+                </button>
+</div>
+<div class="skills-grid">
+<div class="glass skill-card tilt-card" data-category="network">
+<div class="skill-icon">🌐</div>
+<h3>Computer Networking</h3>
+<p>
+                        Konfigurasi Router, Switch, VLAN,
+                        Subnetting, dan Troubleshooting
+                        Jaringan LAN/WAN.
+                    </p>
+<div class="skill-level">
+<span style="width: 85%;"></span>
+</div>
+</div>
+<div class="glass skill-card tilt-card" data-category="web">
+<div class="skill-icon">💻</div>
+<h3>Web Development</h3>
+<p>
+                        Pembuatan website responsif
+                        menggunakan HTML5, CSS3,
+                        JavaScript, dan UI/UX Design.
+                    </p>
+<div class="skill-level">
+<span style="width: 80%;"></span>
+</div>
+</div>
+<div class="glass skill-card tilt-card" data-category="security">
+<div class="skill-icon">🛡️</div>
+<h3>Network Security</h3>
+<p>
+                        Konfigurasi Firewall,
+                        Mikrotik OS, Manajemen Bandwidth,
+                        dan Keamanan Server Dasar.
+                    </p>
+<div class="skill-level">
+<span style="width: 75%;"></span>
+</div>
+</div>
+</div>
+</section>
+<!-- =========================
+             PROYEK
+             ========================= -->
+<section class="section" id="proyek">
+<div class="section-title">
+<span class="num">05</span>
+<h2>Proyek &amp; Praktikum</h2>
+<div class="title-line"></div>
+</div>
+<div class="project-toolbar">
+<div class="project-filters">
+<button class="project-filter active" onclick="filterProjects('all')">
+                        Semua
+                    </button>
+<button class="project-filter" onclick="filterProjects('networking')">
+                        Networking
+                    </button>
+<button class="project-filter" onclick="filterProjects('web')">
+                        Web Dev
+                    </button>
+</div>
+<span class="project-count" id="projectCount">
+                    2 proyek
+                </span>
+</div>
+<div class="grid-2 projects-grid">
+<div class="glass project-card tilt-card project-reveal" data-project-category="networking">
+<div class="project-topline">
+<span class="project-index">01</span>
+<span class="project-year">Lab Project</span>
+</div>
+<div class="project-tag">
+                        Networking
+                    </div>
+<h3>
+                        Perancangan Topologi LAN SMKN 3 Soppeng
+                    </h3>
+<p>
+                        Simulasi konfigurasi MikroTik
+                        RouterBOARD, VLAN tagging,
+                        dan pembagian DHCP Server
+                        untuk lab komputer sekolah.
+                    </p>
+</div>
+<div class="glass project-card tilt-card project-reveal" data-project-category="web">
+<div class="project-topline">
+<span class="project-index">02</span>
+<span class="project-year">Personal Project</span>
+</div>
+<div class="project-tag">
+                        Web Dev
+                    </div>
+<h3>
+                        Portofolio Digital Interactive TJKT
+                    </h3>
+<p>
+                        Pengembangan website portofolio
+                        modern menggunakan efek canvas
+                        particle, audio synthesizer,
+                        dan NEXO AI Assistant.
+                    </p>
+</div>
+</div>
+</section>
+<!-- =========================
+             TIMELINE
+             ========================= -->
+<section class="section" id="timeline">
+<div class="section-title">
+<span class="num">06</span>
+<h2>Perjalanan Akademik</h2>
+<div class="title-line"></div>
+</div>
+<div class="timeline">
+<div class="timeline-item glass">
+<div class="time-tag">
+                        2023 - Sekarang
+                    </div>
+<h3>
+                        SMKN 3 Soppeng
+                    </h3>
+<p>
+                        Menempuh pendidikan kejuruan
+                        jurusan Teknik Komputer
+                        dan Jaringan (TJKT).
+                    </p>
+</div>
+<div class="timeline-item glass">
+<div class="time-tag">
+                        2024 - 2026
+                    </div>
+<h3>
+                        Persiapan LKS Web Technologies &amp; Networking
+                    </h3>
+<p>
+                        Mempelajari dasar pengembangan website, jaringan komputer, dan pemecahan masalah melalui latihan serta proyek.
+                    </p>
+</div>
+</div>
+</section>
+<!-- =========================
+             KONTAK
+             ========================= -->
+<section class="section contact" id="kontak">
+<div class="section-title">
+<span class="num">07</span>
+<h2>Hubungi Saya</h2>
+<div class="title-line"></div>
+</div>
+<div class="contact-card glass tilt-card">
+<div class="contact-icon">
+                    📧
+                </div>
+<h3>
+                    Mari Berkolaborasi!
+                </h3>
+<p>
+                    Apakah Anda tertarik berdiskusi,
+                    bertanya, atau mengajukan
+                    tawaran proyek?
+                </p>
+<button class="email-btn glow-btn" id="copyEmailBtn" onclick="copyEmail()">
+
+                    ✉ Copy Email:
+                    pendiagus333@gmail.com
+
+                </button>
+</div>
+</section>
+</main>
+<!-- =========================
+         CONTACT MODAL
+         ========================= -->
+<div class="custom-modal" id="contactModal">
+<div class="modal-body glass">
+<span class="close-modal-btn" onclick="closeContactModal()">
+                ×
+            </span>
+<h3>
+                Hubungi Fenny Jaya
+            </h3>
+<p>
+                Silakan salin email di bawah ini
+                atau kirim pesan langsung via
+                email client Anda:
+            </p>
+<div class="email-box">
+<input id="modalEmailInput" readonly="" type="text" value="pendiagus333@gmail.com"/>
+<button onclick="copyModalEmail()">
+                    Salin
+                </button>
+</div>
+<a class="btn glow-btn modal-email-link" href="mailto:pendiagus333@gmail.com">
+
+                Kirim Email Langsung ➔
+
+            </a>
+</div>
+</div>
+<!-- =========================
+         NEXO AI
+         ========================= -->
+<div class="robot-widget-container">
+<div class="robot-chat-window glass" id="robotChatWindow">
+<div class="chat-header">
+<div class="robot-status">
+<span class="status-dot"></span>
+<strong>
+                        NEXO AI Assistant
+                    </strong>
+</div>
+<button class="close-chat-btn" onclick="toggleRobotChat()">
+                    ×
+                </button>
+</div>
+<div class="chat-messages" id="chatMessages">
+<div class="msg bot-msg">
+
+                    🤖 Halo!
+                    Saya NEXO, asisten AI
+                    portofolio Fenny Jaya.
+                    Ada yang bisa saya bantu?
+
+                </div>
+</div>
+<div class="quick-questions">
+<button onclick="askRobot('siapa')">
+                    👤 Siapa Fenny?
+                </button>
+<button onclick="askRobot('skills')">
+                    💻 Skill Utama
+                </button>
+<button onclick="askRobot('kontak')">
+                    📧 Kontak
+                </button>
+</div>
+<div class="chat-input-area">
+<input aria-label="Pesan untuk NEXO" id="robotInput" onkeypress="handleKeyPress(event)" placeholder="Ketik pesan..." type="text"/>
+<button aria-label="Kirim pesan" class="send-btn" onclick="sendUserMessage()">
+<i class="fa-solid fa-paper-plane"></i>
+</button>
+</div>
+</div>
+<div class="robot-avatar-btn" onclick="toggleRobotChat()" title="Tanya NEXO AI">
+<div class="robot-antenna">
+<div class="antenna-light"></div>
+</div>
+<div class="robot-head">
+<div class="robot-face">
+<div class="eye left-eye"></div>
+<div class="eye right-eye"></div>
+<div class="mouth" id="robotMouth">
+</div>
+</div>
+</div>
+<div class="robot-body">
+<div class="core-light"></div>
+</div>
+</div>
+</div>
+<!-- =========================
+         AUDIO
+         ========================= -->
+<audio id="bgMusic" loop="" preload="auto">
+<source src="audio/bg-music.mp3" type="audio/mpeg"/>
+<source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg"/>
+</audio>
+<!-- BACK TO TOP -->
+<button aria-label="Kembali ke atas" class="back-to-top glass" id="backToTop" onclick="scrollToTop()" title="Kembali ke atas">
+<i class="fa-solid fa-arrow-up"></i>
+</button>
+<!-- TOAST -->
+<div aria-live="polite" class="toast" id="toast" role="status">
+</div>
+<!-- COMMAND PALETTE -->
+<div aria-hidden="true" class="command-overlay" id="commandPalette">
+<div class="command-panel glass">
+<div class="command-head">
+<div>
+<span class="command-label">
+                        QUICK COMMAND
+                    </span>
+<h3>
+                        Apa yang ingin kamu buka?
+                    </h3>
+</div>
+<button aria-label="Tutup" class="close-command" onclick="closeCommandPalette()">
+<i class="fa-solid fa-xmark"></i>
+</button>
+</div>
+<input autocomplete="off" id="commandInput" placeholder="Cari: proyek, skill, kontak..." type="search"/>
+<div class="command-list" id="commandList">
+</div>
+<div class="command-hint">
+<span>Esc</span>
+                untuk menutup
+
+            </div>
+</div>
+</div>
+<!-- FOOTER -->
+<footer>
+<div class="footer-logo">
+
+            Fenny<span class="accent-text">
+                Jaya
+            </span>
+</div>
+<p>
+            Dibuat dengan semangat belajar dan berkembang
+        </p>
+<p class="copyright">
+            © 2026 Fenny Jaya.
+            All Rights Reserved.
+        </p>
+</footer>
+<script src="script.js?v=2026.09"></script>
+</body>
+</html>
